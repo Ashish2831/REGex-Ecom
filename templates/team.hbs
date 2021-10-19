@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex-Ecom | About Us</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <style>
+        .breadcrumbs {
+            padding: 15px 0;
+            background-color: #f3f8fa;
+            min-height: 40px;
+        }
+
+        .breadcrumbs h2 {
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumbs ol li+li {
+            padding-left: 10px;
+        }
+
+        .breadcrumbs ol li+li::before {
+            display: inline-block;
+            padding-right: 10px;
+            color: #6c757d;
+            content: "/";
+        }
+
+        @media (max-width: 768px) {
+            .breadcrumbs .d-flex {
+                display: block !important;
+            }
+
+            .breadcrumbs ol {
+                display: block;
+            }
+
+            .breadcrumbs ol li {
+                display: inline-block;
+            }
+        }
+
+        .team {
+            background: #fff;
+            padding-bottom: 30px;
+        }
+
+        .team .member {
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .team .member .member-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team .member .social {
+            position: absolute;
+            left: 0;
+            bottom: -40px;
+            right: 0;
+            height: 40px;
+            opacity: 0;
+            transition: bottom ease-in-out 0.4s;
+            text-align: center;
+            background: rgba(30, 67, 86, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team .member .social a {
+            transition: color 0.3s;
+            color: #fff;
+            margin: 0 12px;
+            display: inline-block;
+        }
+
+        .team .member .social a:hover {
+            color: #68A4C4;
+        }
+
+        .team .member .social i {
+            font-size: 18px;
+            margin: 0 2px;
+        }
+
+        .team .member .member-info h4 {
+            font-weight: 700;
+            margin: 15px 0 5px 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .team .member .member-info span {
+            text-align: center;
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: #68A4C4;
+        }
+
+        .team .member .member-info p {
+            font-style: italic;
+            font-size: 14px;
+            line-height: 26px;
+            color: #666;
+        }
+
+        .team .member:hover .social {
+            border-radius: 15px;
+            bottom: 0;
+            opacity: 1;
+            transition: bottom ease-in-out 0.4s;
+        }
+
+        .team .member:hover .social a,
+        .team .member:hover .social i {
+            line-height: 0;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center ">
+        {{>navbar}}
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+        <!-- ======= Our Team Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Our Team</h2>
+                    <ol>
+                        <li><a href="/">Home</a></li>
+                        <li>Our Team</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End Our Team Section -->
+
+        <!-- ======= Team Section ======= -->
+        <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="container">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div style="text-align: center;" class="member-img">
+                            <img style="border-radius: 50%;" src="/images/ashish.jpg" class="img-fluid" alt="">
+                            <div class="social"></div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Ashish Patil</h4>
+                            <span>Full Stack Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <div style="text-align: center;" class="member-img">
+                            <img src="/images/akash.jpg" class="img-fluid" alt="">
+                            <div class="social"></div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Akash Mete</h4>
+                            <span>Front-End Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+    {{>footer}}
+
+
+</body>
+
+</html>

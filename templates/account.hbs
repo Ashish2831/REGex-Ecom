@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | RedStore</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- Account Page -->
+    <div class="account-page">
+        <div class="container">
+            {{#if loggedIn }}
+            {{else}}
+            <h2 style="text-align: center;">Please Login To Access This Resource!!</h2>
+            {{/if}}
+            <div class="row">
+                <div class="col-2">
+                    <img src="https://www.kindpng.com/picc/m/756-7564789_registration-icon-png-transparent-png.png" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form style="top: 82px;" onsubmit="loginFunc(event);" id="LoginForm">
+                            <span style="width: 100%;color:red;" id="login_error">{{ message }}</span>
+                            <input type="email" placeholder="Email">
+                            <span id="username_error"></span>
+                            <input id="password_error" type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forget Password</a>
+                        </form>
+
+                        <form style="top: 80px;" onsubmit="registerFunc(event);" id="RegForm">
+                            <span style="width: 100%;color:green;" id="register_success"></span>
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    {{>footer}}
+
+    <!-- Toggle Form -->
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translatex(0px)";
+            LoginForm.style.transform = "translatex(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+        function login() {
+            RegForm.style.transform = "translatex(300px)";
+            LoginForm.style.transform = "translatex(300px)";
+            Indicator.style.transform = "translate(0px)";
+
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="/js/account.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | RedStore</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {{>navbar}}>
+
+    <!-- Single Products -->
+    <div class="small-container single-product">
+        <div class="row">
+            <div class="col-2">
+                <img src="{{ product.image_url }}" width="100%" id="ProductImg">
+            </div>
+            <div class="col-2">
+                <p>{{ product.category }}</p>
+                <h2>{{ product.name }}</h2>
+                <h4>₹ {{ product.price }}</h4>
+                <select>
+                    <option>Select Size</option>
+                    <option>XXL</option>
+                    <option>XL</option>
+                    <option>L</option>
+                    <option>M</option>
+                    <option>S</option>
+                </select>
+                <a onclick="addToCart('{{ product._id }}')" class="btn">Add To Cart</a>
+
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    </div>
+    <!-- title -->
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products</h2>
+            <p>View More</p>
+        </div>
+    </div>
+    <!-- Products -->
+    <div class="small-container">
+        <div class="row">
+            {{#each related_products}}
+            <a href="/product_details/{{ _id }}/">
+                <div class="col-4">
+                    <img width="200px" height="200px" src="{{ image_url }}">
+                    <h4>{{ name }}</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>₹ {{ price }}</p>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {{>footer}}
+
+    <!-- JavaScript -->
+    <script src="/js/product_detail.js"></script>
+</body>
+
+</html>

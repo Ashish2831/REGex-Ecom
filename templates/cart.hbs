@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | RedStore</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {{>navbar}}
+
+    <!-- Cart items details -->
+    <div class="small-container cart-page">
+        <table id="cart_products"></table>
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>Shipping Price</td>
+                    <td>₹ 150</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>₹ <span id="total_price"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <a style="font-size: large;" class="btn" href="/checkout/">Proceed to buy all items</a>
+    </div>
+
+    <!-- Footer -->
+    {{>footer}}
+
+    <!-- JavaScript -->
+    <script src="/js/cart.js"></script>
+</body>
+
+</html>
